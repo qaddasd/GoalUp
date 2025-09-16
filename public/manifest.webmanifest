@@ -1,0 +1,22 @@
+{
+  "name": "GoalUp",
+  "short_name": "GoalUp",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#facc15",
+  "theme_color": "#facc15",
+  "description": "Оқушыларға арналған конкурстар, дедлайндар және қазақша портфолио (CV) генерациясы",
+  "icons": [
+    {
+      "src": "/placeholder-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/placeholder-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
