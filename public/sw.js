@@ -1,5 +1,5 @@
 /* GoalUp Service Worker */
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const STATIC_CACHE = `goalup-static-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `goalup-runtime-${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline';
@@ -9,6 +9,7 @@ const STATIC_ASSETS = [
   OFFLINE_URL,
   '/manifest.webmanifest',
   '/placeholder-logo.png',
+  '/images/GoalUp.jpg',
   '/styles/globals.css'
 ];
 

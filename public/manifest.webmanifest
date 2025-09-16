@@ -6,17 +6,19 @@
   "display": "standalone",
   "background_color": "#facc15",
   "theme_color": "#facc15",
-  "description": "Оқушыларға арналған конкурстар, дедлайндар және қазақша портфолио (CV) генерациясы",
+  "description": "Оқушыларға арналған конкурстар, дедлайндар және қазақша портфолио (GoalUp AI)",
   "icons": [
     {
-      "src": "/placeholder-logo.png",
+      "src": "/images/GoalUp.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     },
     {
-      "src": "/placeholder-logo.png",
+      "src": "/images/GoalUp.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ]
 }
