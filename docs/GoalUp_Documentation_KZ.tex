@@ -1,0 +1,415 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[kazakh,russian]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+% Геометрия страницы
+\geometry{
+    left=2.5cm,
+    right=2cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=1cm,
+    headsep=0.5cm
+}
+
+% Цветовая схема GoalUp
+\definecolor{goalupyellow}{RGB}{250,204,21}
+\definecolor{goaluppurple}{RGB}{139,69,193}
+\definecolor{goalupblack}{RGB}{0,0,0}
+\definecolor{goalupgray}{RGB}{64,64,64}
+
+% Настройка заголовков
+\titleformat{\section}
+{\Large\bfseries\color{goaluppurple}}
+{\thesection}{1em}{}
+[\titlerule[2pt]]
+
+\titleformat{\subsection}
+{\large\bfseries\color{goalupgray}}
+{\thesubsection}{1em}{}
+
+% Настройка колонтитулов
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{goaluppurple}{\textbf{GoalUp}}}
+\fancyhead[R]{\textcolor{goalupgray}{Жоба құжаттамасы}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% Настройка гиперссылок
+\hypersetup{
+    colorlinks=true,
+    linkcolor=goaluppurple,
+    urlcolor=goaluppurple,
+    citecolor=goaluppurple
+}
+
+% Пользовательские окружения
+\newtcolorbox{infobox}[1]{
+    colback=goalupyellow!10,
+    colframe=goalupyellow,
+    title=#1,
+    fonttitle=\bfseries,
+    boxrule=2pt,
+    arc=5pt
+}
+
+\newtcolorbox{featurebox}[1]{
+    colback=goaluppurple!10,
+    colframe=goaluppurple,
+    title=#1,
+    fonttitle=\bfseries,
+    boxrule=2pt,
+    arc=5pt
+}
+
+\begin{document}
+
+% Титульная страница
+\begin{titlepage}
+    \centering
+    
+    % Логотип (заглушка)
+    \vspace*{1cm}
+    \begin{tcolorbox}[colback=goalupyellow, colframe=goalupblack, boxrule=3pt, arc=10pt, width=8cm]
+        \centering
+        \Huge\textbf{\textcolor{goalupblack}{GoalUp}}\\
+        \Large\textit{Оқушыларға арналған платформа}
+    \end{tcolorbox}
+    
+    \vspace{2cm}
+    
+    {\Huge\bfseries\textcolor{goaluppurple}{Жоба құжаттамасы}}
+    
+    \vspace{1cm}
+    
+    {\Large\textcolor{goalupgray}{Мектеп оқушыларына арналған конкурстар, олимпиадалар және\\
+    GoalUp AI арқылы портфолио генерациясы}}
+    
+    \vspace{2cm}
+    
+    \begin{tcolorbox}[colback=white, colframe=goaluppurple, boxrule=2pt, arc=5pt]
+        \centering
+        \textbf{Авторлар:}\\
+        Төребек Самал (11G)\\
+        Кенжеғали Нұрас (9F)
+        
+        \vspace{0.5cm}
+        
+        \textbf{Күні:} 2025-09-16\\
+        \textbf{Нұсқа:} 1.0
+    \end{tcolorbox}
+    
+    \vfill
+    
+    \textcolor{goalupgray}{\textit{Жабық жоба құжаттамасы}}
+    
+\end{titlepage}
+
+% Мазмұны
+\tableofcontents
+\newpage
+
+% Аннотация
+\section{Аннотация}
+
+\begin{infobox}{Жоба туралы қысқаша}
+GoalUp — мектеп оқушыларына арналған конкурстар, олимпиадалар, жобалар мен хакатондар туралы ақпаратты бір жерге жинақтайтын заманауи веб-қосымша. Жоба оқушыға өзіне лайық мүмкіндіктерді оңай табуға, дедлайндарды бақылауға, күнтізбеге қосуға және ең маңызшысы — қазақ тілінде сапалы портфолио (CV) құрастыруға көмектеседі.
+\end{infobox}
+
+Портфолио құрастыру GoalUp AI жасанды интеллект жүйесі арқылы іске асады және пайдаланушы енгізген қосымша деректерді (жоба атауы, орын, сипаттама, сілтеме) толық ескереді. Қосымша прогрессивті веб-технологиялар (PWA) арқылы офлайн режимде де жұмыс істей алады.
+
+Бұл құжаттама жоба мақсатын, шешілетін проблемаларды, негізгі функцияларды, техникалық құрылымды, пайдаланушы сценарийлерін және жақын арадағы даму жоспарларын толық сипаттайды.
+
+\section{Жиі кездесетін мәселелер}
+
+\begin{featurebox}{Негізгі проблемалар}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Ақпараттың жетіспеушілігі:} Конкурстар мен олимпиадалар туралы ақпарат оқушыларға толық жетпейді. Дереккөздер әр жерде шашыраңқы, сенімді ақпарат табу өте қиын.
+    
+    \item \textbf{Дедлайндарды өткізіп алу:} Көптеген оқушылар маңызды мерзімдерді өткізіп алады. Еске салғыштардың, түсінікті күнтізбелік жоспарлаудың, жеке бақылау құралдарының болмауы.
+    
+    \item \textbf{Жаңа оқушылардың дайындық деңгейі:} Жаңа келген оқушылар конкурстар туралы аз біледі. Форматтар, талаптар, бағалау критерийлері түсініксіз; қайдан бастау керектігі беймәлім.
+    
+    \item \textbf{Портфолио құрастырудың қиындығы:} Қазақ тіліндегі сапалы CV үлгілері аз, құрылым қалай болуы тиіс екені анық емес.
+    
+    \item \textbf{Деректерді сақтаудың ыңғайсыздығы:} Қатысқан іс-шаралар бойынша жеке жазбалар, түзетулер, сілтемелер бір жүйеге келмейді.
+\end{enumerate}
+\end{featurebox}
+
+\section{Мақсаттар мен міндеттер}
+
+\subsection{Негізгі мақсат}
+Мектеп оқушыларына арналған барлық мүмкіндіктерді бір платформада ұсыну және оқушыға жеке портфолио құруды максималды жеңілдету.
+
+\subsection{Нақты міндеттер}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Ыңғайлы каталог:} Олимпиадалар, жобалар, хакатондар — барлығы бір жерде
+    \item \textbf{Жеке сүзгілер:} Сынып, сынып жетекшісі деректері арқылы дербес іріктеу
+    \item \textbf{Еске салғыштар:} .ics және Google Calendar интеграциясы
+    \item \textbf{Таңдаулы тізім:} Маңызды іс-шараларды жылдам сақтау/жою
+    \item \textbf{GoalUp AI портфолио:} Қазақ тілінде толыққанды CV генерациясы
+    \item \textbf{Жеке түзетулер:} Әр іс-шараға нақты деректер қосу
+    \item \textbf{PWA қолдау:} Офлайн режимде жұмыс істеу мүмкіндігі
+    \item \textbf{Сессия тұрақтылығы:} Қайта кіруді қажет етпейтін жүйе
+\end{itemize}
+
+\section{Жобаның сипаттамасы}
+
+\subsection{GoalUp не істейді?}
+
+\begin{featurebox}{Негізгі функциялар}
+\textbf{Мүмкіндіктерді көрсету:}
+\begin{itemize}
+    \item Оқушыларға арналған конкурстар, олимпиадалар, жобалар мен хакатондар
+    \item Әр іс-шараға толық карта: атауы, мерзімі, форматы, санаты, сипаттамасы
+    \item Сыртқы сілтемелер және тіркелу ақпараты
+\end{itemize}
+
+\textbf{Күнтізбе интеграциясы:}
+\begin{itemize}
+    \item .ics файлға жүктеу мүмкіндігі
+    \item Google Calendar-ға бір рет басу арқылы қосу
+    \item Жеке еске салғыштар жүйесі
+\end{itemize}
+
+\textbf{Портфолио жүйесі:}
+\begin{itemize}
+    \item GoalUp AI арқылы қазақ тілінде генерация
+    \item Жеке түзетулер: жоба атауы, орын, сипаттама, сілтеме
+    \item PDF форматында жаңа құжат әр генерацияда
+    \item Құжаттар тарихын сақтау
+\end{itemize}
+\end{featurebox}
+
+\subsection{Уникалды ерекшеліктер}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Толыққанды қазақша локализация} — барлық интерфейс пен GoalUp AI генерациясы
+    \item \textbf{«Тұман» эффектісі} — жұмсақ сары фон, иконкалардың кезең-кезеңімен пайда болуы
+    \item \textbf{Ерекше PDF жүйесі} — Blob URL арқылы кэш мәселесін шешу
+    \item \textbf{Нақты деректер} — пайдаланушының енгізген мәліметтері AI мәтініне шынайылық қосады
+    \item \textbf{PWA технологиясы} — офлайн режимде жұмыс, үй экранына орнату
+    \item \textbf{Гибридті сақтау} — localStorage + cookies арқылы тұрақтылық
+\end{enumerate}
+
+\section{Қолданылу саласы}
+
+\begin{infobox}{Мақсатты аудитория}
+\textbf{Кімге:} 7–12 сынып оқушыларына, олардың мұғалімдеріне және ата-аналарына
+
+\textbf{Қайда:} Мектеп, үйірме, олимпиада/жобаға дайындық, кәсіби бағдар беру сабақтары
+
+\textbf{Қай жағдайда:} Конкурс іздеу, дедлайн бақылау, портфолио дайындау, оқу орындарына/стипендияға құжат жинақтау
+\end{infobox}
+
+\section{Техникалық бөлім}
+
+\subsection{Технологиялар стегі}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Компонент} & \textbf{Технология} \\
+\hline
+Клиент жағы & React + Next.js 15 (App Router) \\
+\hline
+UI компоненттері & shadcn/ui, Lucide icons \\
+\hline
+Стильдер & Tailwind CSS + жеке CSS \\
+\hline
+Сервер жағы & Next.js API Routes \\
+\hline
+Аутентификация & Supabase Auth \\
+\hline
+AI генерация & GoalUp AI (Pollinations API) \\
+\hline
+PDF құру & pdfmake (CDN) \\
+\hline
+PWA & Service Worker + Manifest \\
+\hline
+Деректер & JSON файлдар + localStorage + cookies \\
+\hline
+\end{tabular}
+\caption{Технологиялар тізімі}
+\end{table}
+
+\subsection{Минималды талаптар}
+
+\begin{itemize}[leftmargin=*]
+    \item Қазіргі заманғы браузер (Chrome/Edge/Safari/Firefox)
+    \item Интернет байланысы (GoalUp AI және сыртқы сілтемелер үшін)
+    \item Responsive дизайн — мобильді және desktop экрандарға бейімделген
+    \item PWA қолдауы — офлайн кэш және үй экранына орнату
+\end{itemize}
+
+\subsection{Архитектуралық схема}
+
+\begin{center}
+\begin{tikzpicture}[
+    box/.style={rectangle, draw=goaluppurple, fill=goalupyellow!20, thick, minimum width=3cm, minimum height=1cm},
+    arrow/.style={->, thick, goaluppurple}
+]
+
+% Пайдаланушы деңгейі
+\node[box] (user) at (0,6) {Пайдаланушы браузері};
+
+% UI деңгейі
+\node[box] (ui) at (0,4) {UI (Next.js + React)};
+\node[box] (storage) at (4,4) {LocalStorage + Cookies};
+
+% API деңгейі
+\node[box] (api) at (0,2) {API Routes};
+\node[box] (auth) at (4,2) {Supabase Auth};
+
+% Сыртқы қызметтер
+\node[box] (ai) at (-3,0) {GoalUp AI};
+\node[box] (pdf) at (0,0) {pdfmake};
+\node[box] (pwa) at (3,0) {PWA Service Worker};
+
+% Стрелкалар
+\draw[arrow] (user) -- (ui);
+\draw[arrow] (ui) -- (storage);
+\draw[arrow] (ui) -- (api);
+\draw[arrow] (api) -- (auth);
+\draw[arrow] (api) -- (ai);
+\draw[arrow] (api) -- (pdf);
+\draw[arrow] (ui) -- (pwa);
+
+\end{tikzpicture}
+\end{center}
+
+\section{PWA қолдауы}
+
+\begin{featurebox}{Прогрессивті веб-қосымша мүмкіндіктері}
+\textbf{Service Worker:}
+\begin{itemize}
+    \item Статикалық файлдарды кэштеу
+    \item Офлайн бетке бағыттау
+    \item Stale-while-revalidate стратегиясы
+\end{itemize}
+
+\textbf{Manifest файлы:}
+\begin{itemize}
+    \item Үй экранына орнату мүмкіндігі
+    \item GoalUp брендингі және иконкалар
+    \item Standalone режимде іске қосу
+\end{itemize}
+
+\textbf{Офлайн мүмкіндіктері:}
+\begin{itemize}
+    \item Кэшталған беттерді көру
+    \item Жергілікті деректермен жұмыс
+    \item Байланыс қалпына келгенде синхрондау
+\end{itemize}
+\end{featurebox}
+
+\section{Пайдаланушы сценарийі}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Кіру:} Қолданушы сайтқа кіреді, тіркеледі немесе логин жасайды. PWA арқылы үй экранынан да ашуға болады.
+
+    \item \textbf{Іздеу:} «Home/Search/Календарь» арқылы өзіне қызықты іс-шара табады. Сүзгілер арқылы сыныбы бойынша іріктейді.
+
+    \item \textbf{Қарау:} Карточканы ашады — мерзімі, форматы, санаты, сипаттамасы және сыртқы сілтеме көрсетіледі.
+
+    \item \textbf{Күнтізбеге қосу:} .ics арқылы күнтізбесіне қосады немесе Google Calendar-ға жібереді. Еске салғыштарды белсендіреді.
+
+    \item \textbf{Таңдаулыға сақтау:} Маңыздысын «Таңдаулыға» сақтайды. Қажет кезде «корзина» арқылы тек өз деректерін жоя алады.
+
+    \item \textbf{Портфолио дайындау:} Профиль бөлімінде «Портфолио» қойындысын ашады. Сақталған іс-шаралар тізімі көрінеді.
+
+    \item \textbf{Түзету:} Кез келген іс-шараға «Өңдеу» батырмасы арқылы жоба атауы, орын, сипаттама, сілтеме деректерін қосады.
+
+    \item \textbf{GoalUp AI генерациясы:} «Құрастыру» түймесін басады — сары тұман пайда болып, иконкалар шығады, генерация аяқталғанда тұман сейіледі.
+
+    \item \textbf{Нәтиже:} Қазақ тіліндегі портфолио жаңа PDF ретінде ашылады. Құжаттар тарихын кейін қайта ашуға болады.
+
+    \item \textbf{Кеңейту:} «Жазба қосу» арқылы өзге жеке жетістіктерін қосады және қайта құрастырады.
+\end{enumerate}
+
+\section{Жақын арадағы даму жоспарлары}
+
+\begin{infobox}{2025 жылының соңына дейін}
+\textbf{Қысқа мерзімді мақсаттар (1-2 ай):}
+\begin{itemize}
+    \item Бұлтқа синхрондау (Supabase Storage/DB)
+    \item Push-хабарландырулар жүйесі
+    \item Кеңейтілген PWA мүмкіндіктері
+\end{itemize}
+
+\textbf{Орта мерзімді жоспарлар (3-4 ай):}
+\begin{itemize}
+    \item Мұғалім режимі және бақылау тақтасы
+    \item Кеңейтілген сүзгілер мен ұсыну жүйесі
+    \item Telegram-бот интеграциясы
+\end{itemize}
+
+\textbf{Ұзақ мерзімді көрініс (5-6 ай):}
+\begin{itemize}
+    \item Білім платформаларымен интеграция
+    \item Сертификаттарды валидациялау жүйесі
+    \item Қолжетімділік (A11y) жақсарту
+\end{itemize}
+\end{infobox}
+
+\section{Қорытынды}
+
+GoalUp — қазақ тілінде оқу мүмкіндіктеріне қолжетімділікті арттыратын, дедлайнды бақылауды жеңілдететін және оқушыға сапалы портфолио дайындауға көмектесетін заманауи құрал. Жоба маңызды мәселелерді — ақпараттың шашыраңқылығын, дедлайндарды өткізіп алуды және портфолионы жүйелі түрде құрастыра алмауды — тікелей шешеді.
+
+\begin{featurebox}{Жобаның артықшылықтары}
+\begin{itemize}
+    \item \textbf{Пайдаланушы тәжірибесі:} Жұмсақ анимациялар, түсінікті интерфейс
+    \item \textbf{Техникалық шешімдер:} Тұрақты сессия, гибридті сақтау, ерекше PDF
+    \item \textbf{GoalUp AI:} Қазақ тілінде сапалы портфолио генерациясы
+    \item \textbf{PWA технологиясы:} Офлайн жұмыс және мобильді оңтайландыру
+\end{itemize}
+\end{featurebox}
+
+Барлық бұл ерекшеліктер бірігіп, оқушыға нақты және тиімді нәтиже береді.
+
+\section{Қосымшалар}
+
+\subsection{Интерфейс көрінісі}
+\begin{itemize}
+    \item Скриншоттар: \texttt{public/images/} қалтасындағы иллюстрациялар
+    \item Демонстрациялар: Портфолио PDF үлгілері — «Құжаттар тарихы» бөлімінен көруге болады
+\end{itemize}
+
+\subsection{Техникалық құжаттар}
+\begin{itemize}
+    \item \texttt{app/api/generate-portfolio/route.ts} — GoalUp AI шақыру
+    \item \texttt{app/profile/page.tsx} — Портфолио генерациясы және өңдеу
+    \item \texttt{app/calendar/[id]/page.tsx} — .ics/Google Calendar интеграциясы
+    \item \texttt{public/sw.js} — PWA Service Worker
+    \item \texttt{public/manifest.webmanifest} — PWA Manifest
+\end{itemize}
+
+\subsection{Байланыс}
+Сұрақтар бойынша: Telegram — @qynon
+
+\vfill
+\begin{center}
+\textcolor{goalupgray}{\textit{GoalUp жобасы — Оқушыларға арналған мүмкіндіктер әлемі}}
+\end{center}
+
+\end{document}
