@@ -861,7 +861,7 @@ export default function ProfilePage() {
             <DialogTitle className="text-2xl">Қосымша туралы</DialogTitle>
           </DialogHeader>
           <div className="space-y-3">
-            <p>CareerUp — оқушылар мен студенттерге арналған мүмкіндіктерді (олимпиада, жоба, хакатон) бір жерге жинайтын қосымша.</p>
+            <p>GoalUp — оқушылар мен студенттерге арналған мүмкіндіктерді (олимпиада, жоба, хакатон) бір жерге жинайтын қосымша.</p>
             <p>Сұрақтар бойынша Telegram: <a className="underline" href="https://t.me/qynon" target="_blank" rel="noreferrer noopener">@qynon</a></p>
             <p className="text-sm text-neutral-500">v1.0 • © {new Date().getFullYear()}</p>
           </div>
